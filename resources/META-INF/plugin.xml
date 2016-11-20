@@ -1,0 +1,49 @@
+<idea-plugin>
+  <id>manjaro.mpb</id>
+  <name>Mario Progress Bar</name>
+  <version>1.5</version>
+  <idea-version since-build="181"/>
+  <vendor email="kylian.meulin@gmail.com">KikiManjaro</vendor>
+
+  <description><![CDATA[
+      This is the Mario Progress Bar for IJ based IDEs based on the Nyan Progress Bar by Dmitry Batkovitch.
+      It display Mario with some bricks for the basic bar and a Koopa Shell for the indeterminate one.
+      <br>
+      <br>
+      DETERMINATE:
+      <br>
+      <img src="https://i.imgur.com/3ry0GOy.gif" title="MarioDeterminateBar" />
+      <br>
+      INDETERMINATE:
+      <br>
+      <img src="https://i.imgur.com/fdUDmZI.gif" title="MarioIndeterminateBar" />
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <em>1.0 Creation of the Mario Progress Bar Project</em><br>
+      <em>1.1 Fix Plugin Icon</em><br>
+      <em>1.2 Fix Brick Wall</em><br>
+      <em>1.3 Fix Path to resources + Improving resources loading</em><br>
+      <em>1.4 Fix description</em><br>
+      <em>1.5 Fix Mario and Shell icon rendering issues. Greetings to 李磊 for helping me</em><br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+  <application-components>
+    <component>
+      <implementation-class>ApplicationComponent</implementation-class>
+    </component>
+  </application-components>
+</idea-plugin>

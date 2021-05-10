@@ -2,7 +2,7 @@
   <id>manjaro.mpb</id>
   <name>Mario Progress Bar</name>
   <version>1.5</version>
-  <idea-version since-build="181"/>
+  <idea-version since-build="193"/>
   <vendor email="kylian.meulin@gmail.com">KikiManjaro</vendor>
 
   <description><![CDATA[
@@ -41,9 +41,8 @@
     <!-- Add your actions here -->
   </actions>
 
-  <application-components>
-    <component>
-      <implementation-class>ApplicationComponent</implementation-class>
-    </component>
-  </application-components>
+  <applicationListeners>
+    <listener class="ProgressBarLafManagerListener"
+              topic="com.intellij.ide.ui.LafManagerListener" />
+  </applicationListeners>
 </idea-plugin>

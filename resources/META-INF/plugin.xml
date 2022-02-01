@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>manjaro.mpb</id>
   <name>Mario Progress Bar</name>
-  <version>1.6</version>
+  <version>1.7</version>
   <idea-version since-build="193"/>
   <vendor email="kylian.meulin@gmail.com">KikiManjaro</vendor>
 
@@ -27,6 +27,7 @@
       <em>1.4 Fix description</em><br>
       <em>1.5 Fix Mario and Shell icon rendering issues. Greetings to 李磊 for helping me</em><br>
       <em>1.6 Usage of new Jetbrains API. Greetings to meganukebmp for helping me</em><br>
+      <em>1.7 Usage of JBUIScale instead of JBUI. Greetings to Rubén Bermejo Romero for helping me</em><br>
     ]]>
   </change-notes>
 

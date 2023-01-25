@@ -13,6 +13,9 @@ public enum MBCharacter {
         this.icon = icon;
     }
 
+    public String getDisplayName() {
+        return icon.getDescription();
+    }
     public ImageIcon getIcon() {
         return icon;
     }

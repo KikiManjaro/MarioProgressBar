@@ -1,3 +1,5 @@
+package manjaro.mpb;
+
 import com.intellij.openapi.ui.GraphicsConfig;
 import com.intellij.ui.Gray;
 import com.intellij.ui.JBColor;
@@ -5,6 +7,8 @@ import com.intellij.util.ui.GraphicsUtil;
 import com.intellij.util.ui.JBUI;
 import com.intellij.ui.scale.JBUIScale;
 import com.intellij.util.ui.UIUtil;
+import manjaro.mpb.config.MarioProgressBarSettingsState;
+
 import javax.swing.plaf.basic.BasicGraphicsUtils;
 
 import javax.imageio.ImageIO;
@@ -171,7 +175,7 @@ public class ProgressBarUi extends BasicProgressBarUI {
 
         g2.fill(new RoundRectangle2D.Float(2f * off, 2f * off, amountFull - JBUIScale.scale(5f), h - JBUIScale.scale(5f), JBUIScale.scale(7f), JBUIScale.scale(7f)));
 
-        Icons.MARIO.paintIcon(progressBar, g2, amountFull - JBUIScale.scale(5), -JBUIScale.scale(1));
+        MarioProgressBarSettingsState.getInstance().selectedCharacted.getIcon().paintIcon(progressBar, g2, amountFull - JBUIScale.scale(5), -JBUIScale.scale(1));
         g2.translate(0, -(c.getHeight() - h) / 2);
 
         if (progressBar.isStringPainted()) {

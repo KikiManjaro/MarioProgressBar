@@ -28,6 +28,7 @@
       <em>1.5 Fix Mario and Shell icon rendering issues. Greetings to 李磊 for helping me</em><br>
       <em>1.6 Usage of new Jetbrains API. Greetings to meganukebmp for helping me</em><br>
       <em>1.7 Usage of JBUIScale instead of JBUI. Greetings to Rubén Bermejo Romero for helping me</em><br>
+      <em>1.8 Added character selection, with Luigi inside ! Greetings to Godox</em><br>
     ]]>
   </change-notes>
 
@@ -36,7 +37,13 @@
   <depends>com.intellij.modules.platform</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
+    <applicationService
+            serviceImplementation="manjaro.mpb.config.MarioProgressBarSettingsState" />
+    <applicationConfigurable
+            parentId="tools"
+            instance="manjaro.mpb.config.MarioProgressBarConfigurable"
+            id="org.intellij.sdk.settings.AppSettingsConfigurable"
+            displayName="Mario Progress Bar"/>
   </extensions>
 
   <actions>
@@ -44,7 +51,7 @@
   </actions>
 
   <applicationListeners>
-    <listener class="ProgressBarLafManagerListener"
+    <listener class="manjaro.mpb.ProgressBarLafManagerListener"
               topic="com.intellij.ide.ui.LafManagerListener" />
   </applicationListeners>
 </idea-plugin>

@@ -1,3 +1,5 @@
+package manjaro.mpb;
+
 import com.intellij.ide.ui.LafManager;
 import com.intellij.ide.ui.LafManagerListener;
 import org.jetbrains.annotations.NotNull;

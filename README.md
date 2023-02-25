@@ -19,7 +19,7 @@ You can access plugin's configuration in :
 
 Settings > Tools > Mario Progress Bar 
 
-Here's you can select your character.
+You can choose your character here
 
 ![PluginConfigurationPage](https://i.imgur.com/0o2t116.png)
 

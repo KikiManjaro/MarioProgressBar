@@ -22,7 +22,7 @@ public class MarioProgressBarSettingsComponent {
     private final List<JBRadioButton> charactersRadioButtons = new ArrayList<>();
 
     public MarioProgressBarSettingsComponent() {
-        JBLabel title = new JBLabel("Chose your character :", UIUtil.ComponentStyle.REGULAR);
+        JBLabel title = new JBLabel("Choose your character :", UIUtil.ComponentStyle.REGULAR);
         ButtonGroup characterSelectGroup = new ButtonGroup();
         FormBuilder formBuilder = FormBuilder.createFormBuilder().addComponent(title);
         for (MBCharacter character : values()) {

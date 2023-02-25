@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>manjaro.mpb</id>
   <name>Mario Progress Bar</name>
-  <version>1.7</version>
+  <version>1.8</version>
   <idea-version since-build="193"/>
   <vendor email="kylian.meulin@gmail.com">KikiManjaro</vendor>
 
@@ -17,6 +17,13 @@
       INDETERMINATE:
       <br>
       <img src="https://i.imgur.com/fdUDmZI.gif" title="MarioIndeterminateBar" />
+      <br>
+      <br>
+      You can access plugin's configuration in :
+      <br>
+      Settings > Tools > Mario Progress Bar
+      <br>
+      <img src="https://i.imgur.com/0o2t116.png" title="Options" />
     ]]></description>
 
   <change-notes><![CDATA[

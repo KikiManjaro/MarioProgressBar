@@ -1,5 +1,6 @@
 
 # Project exclude paths
 /out/
-.idea/checkstyle-idea.xml
-.idea/dbnavigator.xml
+/.idea/
+/build/
+/.gradle/

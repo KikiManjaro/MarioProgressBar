@@ -18,7 +18,7 @@ import static manjaro.mpb.MBCharacter.MARIO;
 )
 public class MarioProgressBarSettingsState implements PersistentStateComponent<MarioProgressBarSettingsState> {
 
-  public MBCharacter selectedCharacted = MARIO;
+  public MBCharacter selectedCharacter = MARIO;
 
   public static MarioProgressBarSettingsState getInstance() {
     return ApplicationManager.getApplication().getService(MarioProgressBarSettingsState.class);

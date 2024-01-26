@@ -2,11 +2,13 @@ package manjaro.mpb;
 
 import com.intellij.ide.ui.LafManager;
 import com.intellij.ide.ui.LafManagerListener;
+import com.intellij.openapi.application.ApplicationActivationListener;
+import com.intellij.openapi.wm.IdeFrame;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public class ProgressBarLafManagerListener implements LafManagerListener {
+public class ProgressBarLafManagerListener implements LafManagerListener, ApplicationActivationListener {
 
     public ProgressBarLafManagerListener() {
         updateProgressBarUI();
@@ -14,6 +16,11 @@ public class ProgressBarLafManagerListener implements LafManagerListener {
 
     @Override
     public void lookAndFeelChanged(@NotNull LafManager lafManager) {
+        updateProgressBarUI();
+    }
+
+    @Override
+    public void applicationActivated(@NotNull IdeFrame ideFrame) {
         updateProgressBarUI();
     }
 

@@ -36,6 +36,7 @@
       <em>1.6 Usage of new Jetbrains API. Greetings to meganukebmp for helping me</em><br>
       <em>1.7 Usage of JBUIScale instead of JBUI. Greetings to Rubén Bermejo Romero for helping me</em><br>
       <em>1.8 Added character selection, with Luigi inside ! Greetings to Godox</em><br>
+      <em>1.9 Support IntelliJ 2023.3 and later</em><br>
     ]]>
   </change-notes>
 
@@ -60,5 +61,7 @@
   <applicationListeners>
     <listener class="manjaro.mpb.ProgressBarLafManagerListener"
               topic="com.intellij.ide.ui.LafManagerListener" />
+    <listener class="manjaro.mpb.ProgressBarLafManagerListener"
+              topic="com.intellij.openapi.application.ApplicationActivationListener"/>
   </applicationListeners>
 </idea-plugin>

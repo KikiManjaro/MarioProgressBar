@@ -1,4 +1,4 @@
-package manjaro.mpb;
+package nicrook.naspb;
 
 import com.intellij.openapi.ui.GraphicsConfig;
 import com.intellij.ui.Gray;
@@ -7,7 +7,7 @@ import com.intellij.util.ui.GraphicsUtil;
 import com.intellij.util.ui.JBUI;
 import com.intellij.ui.scale.JBUIScale;
 import com.intellij.util.ui.UIUtil;
-import manjaro.mpb.config.MarioProgressBarSettingsState;
+import nicrook.naspb.config.MarioProgressBarSettingsState;
 
 import javax.swing.plaf.basic.BasicGraphicsUtils;
 

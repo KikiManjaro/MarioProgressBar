@@ -1,4 +1,4 @@
-package manjaro.mpb.config;
+package nicrook.naspb.config;
 
 import com.intellij.openapi.options.Configurable;
 import org.jetbrains.annotations.Nls;

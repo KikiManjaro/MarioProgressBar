@@ -46,10 +46,10 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <applicationService
-            serviceImplementation="manjaro.mpb.config.MarioProgressBarSettingsState" />
+            serviceImplementation="nicrook.naspb.config.MarioProgressBarSettingsState" />
     <applicationConfigurable
             parentId="tools"
-            instance="manjaro.mpb.config.MarioProgressBarConfigurable"
+            instance="nicrook.naspb.config.MarioProgressBarConfigurable"
             id="org.intellij.sdk.settings.AppSettingsConfigurable"
             displayName="Mario Progress Bar"/>
   </extensions>
@@ -59,9 +59,9 @@
   </actions>
 
   <applicationListeners>
-    <listener class="manjaro.mpb.ProgressBarLafManagerListener"
+    <listener class="nicrook.naspb.ProgressBarLafManagerListener"
               topic="com.intellij.ide.ui.LafManagerListener" />
-    <listener class="manjaro.mpb.ProgressBarLafManagerListener"
+    <listener class="nicrook.naspb.ProgressBarLafManagerListener"
               topic="com.intellij.openapi.application.ApplicationActivationListener"/>
   </applicationListeners>
 </idea-plugin>

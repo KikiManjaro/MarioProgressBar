@@ -1,4 +1,4 @@
-package manjaro.mpb;
+package nicrook.naspb;
 
 import javax.swing.*;
 

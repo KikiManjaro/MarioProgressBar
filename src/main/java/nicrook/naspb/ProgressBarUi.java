@@ -7,7 +7,7 @@ import com.intellij.util.ui.GraphicsUtil;
 import com.intellij.util.ui.JBUI;
 import com.intellij.ui.scale.JBUIScale;
 import com.intellij.util.ui.UIUtil;
-import nicrook.naspb.config.MarioProgressBarSettingsState;
+import nicrook.naspb.config.NintendoAllStarProgressBarSettingsState;
 
 import javax.swing.plaf.basic.BasicGraphicsUtils;
 
@@ -175,7 +175,7 @@ public class ProgressBarUi extends BasicProgressBarUI {
 
         g2.fill(new RoundRectangle2D.Float(2f * off, 2f * off, amountFull - JBUIScale.scale(5f), h - JBUIScale.scale(5f), JBUIScale.scale(7f), JBUIScale.scale(7f)));
 
-        MarioProgressBarSettingsState.getInstance().selectedCharacter.getIcon().paintIcon(progressBar, g2, amountFull - JBUIScale.scale(5), -JBUIScale.scale(1));
+        NintendoAllStarProgressBarSettingsState.getInstance().selectedCharacter.getIcon().paintIcon(progressBar, g2, amountFull - JBUIScale.scale(5), -JBUIScale.scale(1));
         g2.translate(0, -(c.getHeight() - h) / 2);
 
         if (progressBar.isStringPainted()) {

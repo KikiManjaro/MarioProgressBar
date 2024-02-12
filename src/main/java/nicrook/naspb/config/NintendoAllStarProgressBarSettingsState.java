@@ -16,22 +16,22 @@ import static nicrook.naspb.MBCharacter.MARIO;
         name = "manjaro.mpb.config.MarioProgressBarSettingsState",
         storages = @Storage("MarioProgressBarPluginSettings.xml")
 )
-public class MarioProgressBarSettingsState implements PersistentStateComponent<MarioProgressBarSettingsState> {
+public class NintendoAllStarProgressBarSettingsState implements PersistentStateComponent<NintendoAllStarProgressBarSettingsState> {
 
   public MBCharacter selectedCharacter = MARIO;
 
-  public static MarioProgressBarSettingsState getInstance() {
-    return ApplicationManager.getApplication().getService(MarioProgressBarSettingsState.class);
+  public static NintendoAllStarProgressBarSettingsState getInstance() {
+    return ApplicationManager.getApplication().getService(NintendoAllStarProgressBarSettingsState.class);
   }
 
   @Nullable
   @Override
-  public MarioProgressBarSettingsState getState() {
+  public NintendoAllStarProgressBarSettingsState getState() {
     return this;
   }
 
   @Override
-  public void loadState(@NotNull MarioProgressBarSettingsState state) {
+  public void loadState(@NotNull NintendoAllStarProgressBarSettingsState state) {
     XmlSerializerUtil.copyBean(state, this);
   }
 

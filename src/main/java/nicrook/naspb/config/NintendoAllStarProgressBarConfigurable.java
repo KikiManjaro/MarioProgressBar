@@ -6,9 +6,9 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-public class MarioProgressBarConfigurable implements Configurable {
+public class NintendoAllStarProgressBarConfigurable implements Configurable {
 
-  private MarioProgressBarSettingsComponent mySettingsComponent;
+  private NintendoAllStarProgressBarSettingsComponent mySettingsComponent;
 
   // A default constructor with no arguments is required because this implementation
   // is registered as an applicationConfigurable EP
@@ -27,13 +27,13 @@ public class MarioProgressBarConfigurable implements Configurable {
   @Nullable
   @Override
   public JComponent createComponent() {
-    mySettingsComponent = new MarioProgressBarSettingsComponent();
+    mySettingsComponent = new NintendoAllStarProgressBarSettingsComponent();
     return mySettingsComponent.getPanel();
   }
 
   @Override
   public boolean isModified() {
-    MarioProgressBarSettingsState settings = MarioProgressBarSettingsState.getInstance();
+    NintendoAllStarProgressBarSettingsState settings = NintendoAllStarProgressBarSettingsState.getInstance();
     boolean modified = !mySettingsComponent.getChosenCharacter().equals(settings.selectedCharacter);
     modified |= mySettingsComponent.getChosenCharacter() != settings.selectedCharacter;
     return modified;
@@ -41,13 +41,13 @@ public class MarioProgressBarConfigurable implements Configurable {
 
   @Override
   public void apply() {
-    MarioProgressBarSettingsState settings = MarioProgressBarSettingsState.getInstance();
+    NintendoAllStarProgressBarSettingsState settings = NintendoAllStarProgressBarSettingsState.getInstance();
     settings.selectedCharacter = mySettingsComponent.getChosenCharacter();
   }
 
   @Override
   public void reset() {
-    MarioProgressBarSettingsState settings = MarioProgressBarSettingsState.getInstance();
+    NintendoAllStarProgressBarSettingsState settings = NintendoAllStarProgressBarSettingsState.getInstance();
     mySettingsComponent.setChosenCharacter(settings.selectedCharacter);
   }
 

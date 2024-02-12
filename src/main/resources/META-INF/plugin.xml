@@ -46,10 +46,10 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <applicationService
-            serviceImplementation="nicrook.naspb.config.MarioProgressBarSettingsState" />
+            serviceImplementation="nicrook.naspb.config.NintendoAllStarProgressBarSettingsState" />
     <applicationConfigurable
             parentId="tools"
-            instance="nicrook.naspb.config.MarioProgressBarConfigurable"
+            instance="nicrook.naspb.config.NintendoAllStarProgressBarConfigurable"
             id="org.intellij.sdk.settings.AppSettingsConfigurable"
             displayName="Mario Progress Bar"/>
   </extensions>

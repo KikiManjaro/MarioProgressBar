@@ -15,13 +15,13 @@ import java.util.List;
 import static nicrook.naspb.MBCharacter.*;
 
 
-public class MarioProgressBarSettingsComponent {
+public class NintendoAllStarProgressBarSettingsComponent {
 
     private final JPanel configMainPanel;
 
     private final List<JBRadioButton> charactersRadioButtons = new ArrayList<>();
 
-    public MarioProgressBarSettingsComponent() {
+    public NintendoAllStarProgressBarSettingsComponent() {
         JBLabel title = new JBLabel("Choose your character :", UIUtil.ComponentStyle.REGULAR);
         ButtonGroup characterSelectGroup = new ButtonGroup();
         FormBuilder formBuilder = FormBuilder.createFormBuilder().addComponent(title);

@@ -1,6 +1,6 @@
-# Nintendo All Stars Progress Bar
+# Nintendo All Star Progress Bar
 
-The Nintendo All Stars Progress Bar for IntelliJ IDEA and other JetBrains IDEs.
+The Nintendo All Star Progress Bar for IntelliJ IDEA and other JetBrains IDEs.
 
 //
 [![Version](https://img.shields.io/jetbrains/plugin/v/14708-mario-progress-bar)](https://plugins.jetbrains.com/plugin/14708-mario-progress-bar/versions)
@@ -19,7 +19,7 @@ This is the [Mario Progress Bar](https://plugins.jetbrains.com/plugin/14708-mari
 
 You can access plugin's configuration in :
 
-Settings > Tools > Nintendo All Stars Progress Bar 
+Settings > Tools > Nintendo All Star Progress Bar 
 
 You can choose your character here
 

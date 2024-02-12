@@ -3,8 +3,8 @@ plugins {
     id 'java'
 }
 
-group "manjaro.mpb"
-version '1.9'
+group "nicrook.naspb"
+version '1.0'
 
 repositories {
     mavenCentral()

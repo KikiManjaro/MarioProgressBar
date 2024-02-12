@@ -16,7 +16,7 @@ public class NintendoAllStarProgressBarConfigurable implements Configurable {
   @Nls(capitalization = Nls.Capitalization.Title)
   @Override
   public String getDisplayName() {
-    return "Mario Progress Bar";
+    return "Nintedo All Star Progress Bar";
   }
 
   @Override

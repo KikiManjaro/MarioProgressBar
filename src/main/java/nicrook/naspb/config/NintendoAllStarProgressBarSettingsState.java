@@ -13,8 +13,8 @@ import static nicrook.naspb.MBCharacter.MARIO;
 
 
 @State(
-        name = "manjaro.mpb.config.MarioProgressBarSettingsState",
-        storages = @Storage("MarioProgressBarPluginSettings.xml")
+        name = "nicrook.naspb.config.NintendoAllStarProgressBarSettingsState",
+        storages = @Storage("NintendoAllStarProgressBarPluginSettings.xml")
 )
 public class NintendoAllStarProgressBarSettingsState implements PersistentStateComponent<NintendoAllStarProgressBarSettingsState> {
 

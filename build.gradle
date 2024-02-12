@@ -1,10 +1,10 @@
 plugins {
-    id 'org.jetbrains.intellij' version '1.9.0'
+    id 'org.jetbrains.intellij' version '1.17.1'
     id 'java'
 }
 
 group "nicrook.naspb"
-version '1.0'
+version '1.0.0'
 
 repositories {
     mavenCentral()
@@ -16,11 +16,22 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version = '2022.1'
+    version = '2022.2.3'
     plugins = ['java']
     updateSinceUntilBuild = false
 }
 
+jar {
+    archiveBaseName = 'NintendoAllStarsProgressBar'
+    getDestinationDirectory().set(file("C:/Users/Nicholas/NintendoAllStarsProgressBar"))
+    from sourceSets.main.output
+}
+
 test {
     useJUnitPlatform()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }

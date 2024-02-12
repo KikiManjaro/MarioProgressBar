@@ -1,9 +1,9 @@
 <idea-plugin>
-  <id>manjaro.mpb</id>
-  <name>Mario Progress Bar</name>
-  <version>1.8</version>
-  <idea-version since-build="193"/>
-  <vendor email="kylian.meulin@gmail.com">KikiManjaro</vendor>
+  <id>nicrook.naspb</id>
+  <name>Nintendo All Star Progress Bar</name>
+  <version>1.0</version>
+  <idea-version since-build="222"/>
+  <vendor email="nicrook@gmail.com">NiCrook</vendor>
 
   <description><![CDATA[
       This is the Mario Progress Bar for IJ based IDEs based on the Nyan Progress Bar by Dmitry Batkovitch.
@@ -51,7 +51,7 @@
             parentId="tools"
             instance="nicrook.naspb.config.NintendoAllStarProgressBarConfigurable"
             id="org.intellij.sdk.settings.AppSettingsConfigurable"
-            displayName="Mario Progress Bar"/>
+            displayName="Nintendo All Star Progress Bar"/>
   </extensions>
 
   <actions>

@@ -1,22 +1,20 @@
 package manjaro.mpb;
 
-import javax.swing.*;
-
 public enum MBCharacter {
 
     MARIO(Icons.MARIO),
     LUIGI(Icons.LUIGI);
 
-    private final ImageIcon icon;
+    private final ScaledGifIcon icon;
 
-    MBCharacter(ImageIcon icon) {
+    MBCharacter(ScaledGifIcon icon) {
         this.icon = icon;
     }
 
     public String getDisplayName() {
         return icon.getDescription();
     }
-    public ImageIcon getIcon() {
+    public ScaledGifIcon getIcon() {
         return icon;
     }
 

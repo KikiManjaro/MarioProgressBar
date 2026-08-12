@@ -1,11 +1,9 @@
 package manjaro.mpb;
 
-import javax.swing.*;
-
 public interface Icons {
-    ImageIcon MARIO = new ImageIcon(Icons.class.getResource("/mario.gif"), "Mario");
+    ScaledGifIcon MARIO = new ScaledGifIcon(Icons.class.getResource("/mario.gif"), "Mario");
 
-    ImageIcon LUIGI = new ImageIcon(Icons.class.getResource("/luigi.gif"), "Luigi");
+    ScaledGifIcon LUIGI = new ScaledGifIcon(Icons.class.getResource("/luigi.gif"), "Luigi");
 
-    ImageIcon SHELL = new ImageIcon(Icons.class.getResource("/shell.gif"));
+    ScaledGifIcon SHELL = new ScaledGifIcon(Icons.class.getResource("/shell.gif"), "Shell");
 }

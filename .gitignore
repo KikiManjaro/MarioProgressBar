@@ -1,6 +1,18 @@
-
-# Project exclude paths
+# Build outputs
 /out/
-/.idea/
 /build/
 /.gradle/
+
+# IDE
+/.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Logs
+*.log

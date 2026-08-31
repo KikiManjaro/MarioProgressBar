@@ -1,11 +1,17 @@
 package manjaro.mpb;
 
 import javax.swing.*;
+import java.net.URL;
+import java.util.Objects;
 
 public interface Icons {
-    ImageIcon MARIO = new ImageIcon(Icons.class.getResource("/mario.gif"), "Mario");
+    ImageIcon MARIO = createIcon("/mario.gif", "Mario");
+    ImageIcon LUIGI = createIcon("/luigi.gif", "Luigi");
+    ImageIcon SHELL = createIcon("/shell.gif", "Shell");
 
-    ImageIcon LUIGI = new ImageIcon(Icons.class.getResource("/luigi.gif"), "Luigi");
-
-    ImageIcon SHELL = new ImageIcon(Icons.class.getResource("/shell.gif"));
+    static ImageIcon createIcon(String path, String description) {
+        URL resource = Icons.class.getResource(path);
+        Objects.requireNonNull(resource, "Missing resource: " + path);
+        return new ImageIcon(resource, description);
+    }
 }

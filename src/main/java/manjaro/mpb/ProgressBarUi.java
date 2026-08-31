@@ -7,6 +7,7 @@ import com.intellij.util.ui.GraphicsUtil;
 import com.intellij.util.ui.JBUI;
 import com.intellij.ui.scale.JBUIScale;
 import com.intellij.util.ui.UIUtil;
+import manjaro.mpb.MBCharacter;
 import manjaro.mpb.config.MarioProgressBarSettingsState;
 
 import javax.swing.plaf.basic.BasicGraphicsUtils;
@@ -30,9 +31,12 @@ public class ProgressBarUi extends BasicProgressBarUI {
 
     public ProgressBarUi() {
         try {
-            bimage = ImageIO.read(this.getClass().getResource("/bricks.png"));
+            java.net.URL resource = this.getClass().getResource("/bricks.png");
+            if (resource != null) {
+                bimage = ImageIO.read(resource);
+            }
         } catch (IOException e) {
-            e.printStackTrace();
+            // bricks texture is optional — fall back to solid fill if missing
         }
     }
 
@@ -115,7 +119,9 @@ public class ProgressBarUi extends BasicProgressBarUI {
             g.fill(area);
         }
 
-        Icons.SHELL.paintIcon(progressBar, g, offset2 - JBUIScale.scale(3), -JBUIScale.scale(-2));
+        if (Icons.SHELL != null) {
+            Icons.SHELL.paintIcon(progressBar, g, offset2 - JBUIScale.scale(3), -JBUIScale.scale(-2));
+        }
 
         g.draw(new RoundRectangle2D.Float(1f, 1f, w - 2f - 1f, h - 2f - 1f, R, R));
         g.translate(0, -(c.getHeight() - h) / 2);
@@ -173,9 +179,13 @@ public class ProgressBarUi extends BasicProgressBarUI {
             g2.setPaint(tp);
         }
 
-        g2.fill(new RoundRectangle2D.Float(2f * off, 2f * off, amountFull - JBUIScale.scale(5f), h - JBUIScale.scale(5f), JBUIScale.scale(7f), JBUIScale.scale(7f)));
+        float fillWidth = Math.max(0, amountFull - JBUIScale.scale(5f));
+        g2.fill(new RoundRectangle2D.Float(2f * off, 2f * off, fillWidth, h - JBUIScale.scale(5f), JBUIScale.scale(7f), JBUIScale.scale(7f)));
 
-        MarioProgressBarSettingsState.getInstance().selectedCharacter.getIcon().paintIcon(progressBar, g2, amountFull - JBUIScale.scale(5), -JBUIScale.scale(1));
+        MBCharacter selected = MarioProgressBarSettingsState.getInstance().selectedCharacter;
+        if (selected != null && selected.getIcon() != null) {
+            selected.getIcon().paintIcon(progressBar, g2, amountFull - JBUIScale.scale(5), -JBUIScale.scale(1));
+        }
         g2.translate(0, -(c.getHeight() - h) / 2);
 
         if (progressBar.isStringPainted()) {
@@ -193,6 +203,7 @@ public class ProgressBarUi extends BasicProgressBarUI {
 
         Graphics2D g2 = (Graphics2D) g;
         String progressString = progressBar.getString();
+        if (progressString == null || progressString.isEmpty()) return;
         g2.setFont(progressBar.getFont());
         Point renderLocation = getStringPlacement(g2, progressString,
                 x, y, w, h);

@@ -32,7 +32,9 @@ public class MarioProgressBarSettingsState implements PersistentStateComponent<M
 
   @Override
   public void loadState(@NotNull MarioProgressBarSettingsState state) {
-    XmlSerializerUtil.copyBean(state, this);
+    if (state.selectedCharacter != null) {
+      XmlSerializerUtil.copyBean(state, this);
+    }
   }
 
 }

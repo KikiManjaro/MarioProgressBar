@@ -25,7 +25,12 @@ public class ProgressBarLafManagerListener implements LafManagerListener, Applic
     }
 
     private static void updateProgressBarUI() {
-        UIManager.put("ProgressBarUI", ProgressBarUi.class.getName());
-        UIManager.getDefaults().put(ProgressBarUi.class.getName(), ProgressBarUi.class);
+        // Defensive: UIManager calls are safe even during early startup
+        try {
+            UIManager.put("ProgressBarUI", ProgressBarUi.class.getName());
+            UIManager.getDefaults().put(ProgressBarUi.class.getName(), ProgressBarUi.class);
+        } catch (Exception ignored) {
+            // Avoid breaking IDE startup if LAF manager fires before UIManager is ready
+        }
     }
 }

@@ -21,6 +21,7 @@ public class MarioProgressBarConfigurable implements Configurable {
 
   @Override
   public JComponent getPreferredFocusedComponent() {
+    if (mySettingsComponent == null) return null;
     return mySettingsComponent.getPreferredFocusedComponent();
   }
 
@@ -33,20 +34,21 @@ public class MarioProgressBarConfigurable implements Configurable {
 
   @Override
   public boolean isModified() {
+    if (mySettingsComponent == null) return false;
     MarioProgressBarSettingsState settings = MarioProgressBarSettingsState.getInstance();
-    boolean modified = !mySettingsComponent.getChosenCharacter().equals(settings.selectedCharacter);
-    modified |= mySettingsComponent.getChosenCharacter() != settings.selectedCharacter;
-    return modified;
+    return mySettingsComponent.getChosenCharacter() != settings.selectedCharacter;
   }
 
   @Override
   public void apply() {
+    if (mySettingsComponent == null) return;
     MarioProgressBarSettingsState settings = MarioProgressBarSettingsState.getInstance();
     settings.selectedCharacter = mySettingsComponent.getChosenCharacter();
   }
 
   @Override
   public void reset() {
+    if (mySettingsComponent == null) return;
     MarioProgressBarSettingsState settings = MarioProgressBarSettingsState.getInstance();
     mySettingsComponent.setChosenCharacter(settings.selectedCharacter);
   }
@@ -55,5 +57,4 @@ public class MarioProgressBarConfigurable implements Configurable {
   public void disposeUIResources() {
     mySettingsComponent = null;
   }
-
 }

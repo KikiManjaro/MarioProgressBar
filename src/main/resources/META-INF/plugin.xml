@@ -1,8 +1,8 @@
 <idea-plugin>
   <id>manjaro.mpb</id>
   <name>Mario Progress Bar</name>
-  <version>1.8</version>
-  <idea-version since-build="193"/>
+  <version>1.9</version>
+  <idea-version since-build="233"/>
   <vendor email="kylian.meulin@gmail.com">KikiManjaro</vendor>
 
   <description><![CDATA[

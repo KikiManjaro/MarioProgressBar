@@ -1,5 +1,6 @@
 package manjaro.mpb.config;// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
+
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBRadioButton;
 import com.intellij.util.ui.FormBuilder;
@@ -10,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import static manjaro.mpb.MBCharacter.*;
 
@@ -35,7 +35,9 @@ public class MarioProgressBarSettingsComponent {
     }
 
     public JComponent getPreferredFocusedComponent() {
-        if (charactersRadioButtons.isEmpty()) return null;
+        if (charactersRadioButtons.isEmpty()) {
+            return null;
+        }
         return charactersRadioButtons.get(0);
     }
 
@@ -47,23 +49,13 @@ public class MarioProgressBarSettingsComponent {
     public MBCharacter getChosenCharacter() {
         return charactersRadioButtons.stream()
                 .filter(AbstractButton::isSelected).findFirst()
-                .map(radioButton -> {
-                    String text = radioButton.getText();
-                    if (text == null) return MARIO;
-                    try {
-                        return valueOf(text.toUpperCase(Locale.ROOT));
-                    } catch (IllegalArgumentException e) {
-                        return MARIO;
-                    }
-                })
+                .map(radioButton -> valueOf(radioButton.getText().toUpperCase()))
                 .orElse(MARIO);
     }
 
     public void setChosenCharacter(@NotNull MBCharacter newBros) {
         for (JBRadioButton charactersRadioButton : charactersRadioButtons) {
-            String text = charactersRadioButton.getText();
-            if (text == null) continue;
-            charactersRadioButton.setSelected(newBros.name().equals(text.toUpperCase(Locale.ROOT)));
+            charactersRadioButton.setSelected(newBros.name().equals(charactersRadioButton.getText().toUpperCase()));
         }
     }
 

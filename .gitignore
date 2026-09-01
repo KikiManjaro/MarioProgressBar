@@ -1,18 +1,18 @@
-# Build outputs
+# Gradle / build
 /out/
 /build/
 /.gradle/
+build/
 
-# IDE
+# IntelliJ
 /.idea/
 *.iml
 *.ipr
 *.iws
 
-# OS
+# macOS
 .DS_Store
 **/.DS_Store
-Thumbs.db
 
-# Logs
-*.log
+# Plugin sandbox
+/.tmp/

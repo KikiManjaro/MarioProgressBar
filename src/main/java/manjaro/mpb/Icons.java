@@ -1,7 +1,6 @@
 package manjaro.mpb;
 
 import javax.swing.*;
-import java.net.URL;
 import java.util.Objects;
 
 public interface Icons {
@@ -10,8 +9,12 @@ public interface Icons {
     ImageIcon SHELL = createIcon("/shell.gif", "Shell");
 
     static ImageIcon createIcon(String path, String description) {
-        URL resource = Icons.class.getResource(path);
-        Objects.requireNonNull(resource, "Missing resource: " + path);
-        return new ImageIcon(resource, description);
+        java.net.URL url = Icons.class.getResource(path);
+        Objects.requireNonNull(url, "Resource not found: " + path);
+        return description != null ? new ImageIcon(url, description) : new ImageIcon(url);
+    }
+
+    static ImageIcon createIcon(String path) {
+        return createIcon(path, null);
     }
 }

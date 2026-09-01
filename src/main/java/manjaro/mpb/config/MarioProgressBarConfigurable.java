@@ -33,10 +33,11 @@ public class MarioProgressBarConfigurable implements Configurable {
 
   @Override
   public boolean isModified() {
+    if (mySettingsComponent == null) {
+      return false;
+    }
     MarioProgressBarSettingsState settings = MarioProgressBarSettingsState.getInstance();
-    boolean modified = !mySettingsComponent.getChosenCharacter().equals(settings.selectedCharacter);
-    modified |= mySettingsComponent.getChosenCharacter() != settings.selectedCharacter;
-    return modified;
+    return mySettingsComponent.getChosenCharacter() != settings.selectedCharacter;
   }
 
   @Override

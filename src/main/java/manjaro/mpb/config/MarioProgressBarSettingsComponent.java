@@ -35,11 +35,10 @@ public class MarioProgressBarSettingsComponent {
     }
 
     public JComponent getPreferredFocusedComponent() {
-        try {
-            return charactersRadioButtons.get(0);
-        } catch (IndexOutOfBoundsException e) {
+        if (charactersRadioButtons.isEmpty()) {
             return null;
         }
+        return charactersRadioButtons.get(0);
     }
 
     public JPanel getPanel() {

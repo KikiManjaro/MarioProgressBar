@@ -1,6 +1,18 @@
-
-# Project exclude paths
+# Gradle / build
 /out/
-/.idea/
 /build/
 /.gradle/
+build/
+
+# IntelliJ
+/.idea/
+*.iml
+*.ipr
+*.iws
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Plugin sandbox
+/.tmp/

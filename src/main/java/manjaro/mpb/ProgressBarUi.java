@@ -26,13 +26,20 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class ProgressBarUi extends BasicProgressBarUI {
+    private static final java.util.logging.Logger LOG =
+            java.util.logging.Logger.getLogger(ProgressBarUi.class.getName());
     BufferedImage bimage = null;
 
     public ProgressBarUi() {
-        try {
-            bimage = ImageIO.read(this.getClass().getResource("/bricks.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
+        java.net.URL brickUrl = this.getClass().getResource("/bricks.png");
+        if (brickUrl != null) {
+            try {
+                bimage = ImageIO.read(brickUrl);
+            } catch (IOException e) {
+                LOG.log(java.util.logging.Level.WARNING, "Failed to load bricks.png", e);
+            }
+        } else {
+            LOG.warning("bricks.png not found on classpath");
         }
     }
 
@@ -173,7 +180,9 @@ public class ProgressBarUi extends BasicProgressBarUI {
             g2.setPaint(tp);
         }
 
-        g2.fill(new RoundRectangle2D.Float(2f * off, 2f * off, amountFull - JBUIScale.scale(5f), h - JBUIScale.scale(5f), JBUIScale.scale(7f), JBUIScale.scale(7f)));
+        float fillWidth = Math.max(0, amountFull - JBUIScale.scale(5f));
+        float fillHeight = Math.max(0, h - JBUIScale.scale(5f));
+        g2.fill(new RoundRectangle2D.Float(2f * off, 2f * off, fillWidth, fillHeight, JBUIScale.scale(7f), JBUIScale.scale(7f)));
 
         MarioProgressBarSettingsState.getInstance().selectedCharacter.getIcon().paintIcon(progressBar, g2, amountFull - JBUIScale.scale(5), -JBUIScale.scale(1));
         g2.translate(0, -(c.getHeight() - h) / 2);
